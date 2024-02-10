@@ -1,13 +1,17 @@
-import tkinter as tk
+import ttkbootstrap as tk
+#from ttkbootstrap import style
+from ttkbootstrap.constants import *
 from tkinter.filedialog import *
 
-root = tk.Tk()
+#style = style.Style(theme="superhero")
+#root = style.master
+root = tk.Window()
 root.title("python编辑器")
 
 text = tk.Text(root)
 text.config(font=('Arial', 12), wrap='word')
 text.config(height=10, width=50)
-text.pack()
+text.pack(side="bottom")
 
 def save():
 	filenewpath = asksaveasfilename(defaultextension='.py')
@@ -30,16 +34,16 @@ def file():
 		f.close()
 		text.insert("end",a)
 
-botton1 = tk.Button(root,text="保存",command=save)
-botton1.pack()
+botton1 = tk.Button(root,text="保存",bootstyle=(INFO,OUTLINE),command=save)
+botton1.pack(side="left")
 
-button2 = tk.Button(root,text="运行",command=run)
-button2.pack()
+button2 = tk.Button(root,text="运行",bootstyle=(INFO,OUTLINE),command=run)
+button2.pack(side="left")
 
-button3 = tk.Button(root,text="清空",command=delet)
-button3.pack()
+button3 = tk.Button(root,text="清空",bootstyle=(INFO,OUTLINE),command=delet)
+button3.pack(side="left")
 
-button4 = tk.Button(root,text="打开",command=file)
-button4.pack()
+button4 = tk.Button(root,text="打开",bootstyle=(INFO,OUTLINE),command=file)
+button4.pack(side="left")
 
 root.mainloop()
