@@ -10,7 +10,6 @@ root.title("python编辑器")
 
 text = tk.Text(root)
 text.config(font=('Arial', 12), wrap='word')
-text.config(height=10, width=50)
 text.pack(side="bottom")
 
 def save():
